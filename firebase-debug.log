@@ -1,0 +1,132 @@
+[debug] [2022-09-06T17:45:21.772Z] ----------------------------------------------------------------------
+[debug] [2022-09-06T17:45:21.777Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\METRO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-09-06T17:45:21.778Z] CLI Version:   11.8.0
+[debug] [2022-09-06T17:45:21.778Z] Platform:      win32
+[debug] [2022-09-06T17:45:21.779Z] Node Version:  v16.15.1
+[debug] [2022-09-06T17:45:21.781Z] Time:          Tue Sep 06 2022 19:45:21 GMT+0200 (توقيت شرق أوروبا الرسمي)
+[debug] [2022-09-06T17:45:21.782Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-06T17:45:21.970Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-06T17:45:21.971Z] > authorizing via signed-in user (mohamedsaleh181@gmail.com)
+[debug] [2022-09-06T17:45:21.971Z] [iam] checking project freshio-9d7ec for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-09-06T17:45:21.978Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions [none]
+[debug] [2022-09-06T17:45:21.979Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions x-goog-quota-user=projects/freshio-9d7ec
+[debug] [2022-09-06T17:45:21.980Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-06T17:45:23.239Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions 200
+[debug] [2022-09-06T17:45:23.240Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-06T17:45:23.243Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec [none]
+[debug] [2022-09-06T17:45:23.864Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec 200
+[debug] [2022-09-06T17:45:23.865Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec {"projectId":"freshio-9d7ec","projectNumber":"927105717624","displayName":"freshio","name":"projects/freshio-9d7ec","resources":{"hostingSite":"freshio-9d7ec","storageBucket":"freshio-9d7ec.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_3333e4ea-28e6-4e8e-8c40-8715cd571113"}
+[info] 
+[info] === Deploying to 'freshio-9d7ec'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-09-06T17:45:23.872Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec [none]
+[debug] [2022-09-06T17:45:24.663Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec 200
+[debug] [2022-09-06T17:45:24.664Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec {"projectId":"freshio-9d7ec","projectNumber":"927105717624","displayName":"freshio","name":"projects/freshio-9d7ec","resources":{"hostingSite":"freshio-9d7ec","storageBucket":"freshio-9d7ec.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_3333e4ea-28e6-4e8e-8c40-8715cd571113"}
+[debug] [2022-09-06T17:45:24.667Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/927105717624/sites/freshio-9d7ec/versions [none]
+[debug] [2022-09-06T17:45:24.667Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/927105717624/sites/freshio-9d7ec/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-09-06T17:45:26.151Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/927105717624/sites/freshio-9d7ec/versions 500
+[debug] [2022-09-06T17:45:26.151Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/927105717624/sites/freshio-9d7ec/versions {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2022-09-06T17:45:26.567Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
+[debug] [2022-09-06T17:47:33.923Z] ----------------------------------------------------------------------
+[debug] [2022-09-06T17:47:33.929Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\METRO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-09-06T17:47:33.930Z] CLI Version:   11.8.0
+[debug] [2022-09-06T17:47:33.931Z] Platform:      win32
+[debug] [2022-09-06T17:47:33.931Z] Node Version:  v16.15.1
+[debug] [2022-09-06T17:47:33.933Z] Time:          Tue Sep 06 2022 19:47:33 GMT+0200 (توقيت شرق أوروبا الرسمي)
+[debug] [2022-09-06T17:47:33.934Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-06T17:47:34.105Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-06T17:47:34.106Z] > authorizing via signed-in user (mohamedsaleh181@gmail.com)
+[debug] [2022-09-06T17:47:34.107Z] [iam] checking project freshio-9d7ec for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-09-06T17:47:34.112Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions [none]
+[debug] [2022-09-06T17:47:34.113Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions x-goog-quota-user=projects/freshio-9d7ec
+[debug] [2022-09-06T17:47:34.113Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-06T17:47:35.498Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions 200
+[debug] [2022-09-06T17:47:35.498Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-06T17:47:35.500Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec [none]
+[debug] [2022-09-06T17:47:36.280Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec 200
+[debug] [2022-09-06T17:47:36.281Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec {"projectId":"freshio-9d7ec","projectNumber":"927105717624","displayName":"freshio","name":"projects/freshio-9d7ec","resources":{"hostingSite":"freshio-9d7ec","storageBucket":"freshio-9d7ec.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_3333e4ea-28e6-4e8e-8c40-8715cd571113"}
+[info] 
+[info] === Deploying to 'freshio-9d7ec'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-09-06T17:47:36.288Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec [none]
+[debug] [2022-09-06T17:47:37.028Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec 200
+[debug] [2022-09-06T17:47:37.028Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec {"projectId":"freshio-9d7ec","projectNumber":"927105717624","displayName":"freshio","name":"projects/freshio-9d7ec","resources":{"hostingSite":"freshio-9d7ec","storageBucket":"freshio-9d7ec.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_3333e4ea-28e6-4e8e-8c40-8715cd571113"}
+[debug] [2022-09-06T17:47:37.033Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/927105717624/sites/freshio-9d7ec/versions [none]
+[debug] [2022-09-06T17:47:37.034Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/927105717624/sites/freshio-9d7ec/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-09-06T17:47:39.163Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/927105717624/sites/freshio-9d7ec/versions 500
+[debug] [2022-09-06T17:47:39.163Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/927105717624/sites/freshio-9d7ec/versions {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2022-09-06T17:47:39.557Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
+[debug] [2022-09-06T18:07:36.897Z] ----------------------------------------------------------------------
+[debug] [2022-09-06T18:07:36.900Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\METRO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-09-06T18:07:36.901Z] CLI Version:   11.8.0
+[debug] [2022-09-06T18:07:36.901Z] Platform:      win32
+[debug] [2022-09-06T18:07:36.901Z] Node Version:  v16.15.1
+[debug] [2022-09-06T18:07:36.903Z] Time:          Tue Sep 06 2022 20:07:36 GMT+0200 (توقيت شرق أوروبا الرسمي)
+[debug] [2022-09-06T18:07:36.904Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-06T18:07:37.088Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-06T18:07:37.089Z] > authorizing via signed-in user (mohamedsaleh181@gmail.com)
+[debug] [2022-09-06T18:07:37.090Z] [iam] checking project freshio-9d7ec for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-09-06T18:07:37.096Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions [none]
+[debug] [2022-09-06T18:07:37.097Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions x-goog-quota-user=projects/freshio-9d7ec
+[debug] [2022-09-06T18:07:37.097Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-06T18:07:38.462Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions 200
+[debug] [2022-09-06T18:07:38.463Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/freshio-9d7ec:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-06T18:07:38.466Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec [none]
+[debug] [2022-09-06T18:07:39.200Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec 200
+[debug] [2022-09-06T18:07:39.200Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec {"projectId":"freshio-9d7ec","projectNumber":"927105717624","displayName":"freshio","name":"projects/freshio-9d7ec","resources":{"hostingSite":"freshio-9d7ec","storageBucket":"freshio-9d7ec.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_3333e4ea-28e6-4e8e-8c40-8715cd571113"}
+[info] 
+[info] === Deploying to 'freshio-9d7ec'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-09-06T18:07:39.207Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec [none]
+[debug] [2022-09-06T18:07:39.803Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec 200
+[debug] [2022-09-06T18:07:39.804Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/freshio-9d7ec {"projectId":"freshio-9d7ec","projectNumber":"927105717624","displayName":"freshio","name":"projects/freshio-9d7ec","resources":{"hostingSite":"freshio-9d7ec","storageBucket":"freshio-9d7ec.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_3333e4ea-28e6-4e8e-8c40-8715cd571113"}
+[debug] [2022-09-06T18:07:39.807Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/927105717624/sites/freshio-9d7ec/versions [none]
+[debug] [2022-09-06T18:07:39.808Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/927105717624/sites/freshio-9d7ec/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-09-06T18:07:41.438Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/927105717624/sites/freshio-9d7ec/versions 500
+[debug] [2022-09-06T18:07:41.438Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/927105717624/sites/freshio-9d7ec/versions {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2022-09-06T18:07:42.042Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
