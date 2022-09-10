@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { subApiContext } from '../../context/SubCategoryContext';
+
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -24,6 +25,7 @@ export default function Drawer() {
   const [price, setPrice] = useState([1, 8000]);
   let filterPrice = [];
   const searchPrice = (e, data) => {
+    // data is an array of min and max price ex: [800, 4000]
     filterPrice = allItems.filter((item) => {
       return item.price >= data[0] && item.price <= data[1];
     });
@@ -174,6 +176,7 @@ export default function Drawer() {
                     value={brandArray[0]}
                     control={<Radio />}
                     label={brandArray[0]}
+                    checked
                   />
                 )}
               </RadioGroup>

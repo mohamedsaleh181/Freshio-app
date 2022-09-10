@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react';
-import './Details.css';
-import { BsHeart, BsCart, BsHeartFill } from 'react-icons/bs';
-import { DetailsContext } from '../../context/DetailsContext';
-import { Container } from '@mui/material';
-import { CartContext } from '../../context/CartContext';
-import { FavoritesContext } from '../../context/FavoritesContext';
-import { UserAuth } from '../../context/AuthContext';
-import { ModalContext } from '../../context/ModalContext';
+import React, { useContext, useState } from "react";
+import "./Details.css";
+import { BsHeart, BsCart, BsHeartFill } from "react-icons/bs";
+import { DetailsContext } from "../../context/DetailsContext";
+import { Container } from "@mui/material";
+import { CartContext } from "../../context/CartContext";
+import { FavoritesContext } from "../../context/FavoritesContext";
+import { UserAuth } from "../../context/AuthContext";
+import { ModalContext } from "../../context/ModalContext";
 
 const Details = ({ onClick }) => {
   const [isFav, setIsFav] = useState(false);
@@ -16,24 +16,25 @@ const Details = ({ onClick }) => {
   const { user } = UserAuth();
   const { setModal } = ModalContext();
   const { favoritesItems } = useContext(FavoritesContext);
-  
 
-  const addToCart = () => {
+  const addToCart = (e) => {
+    e.stopPropagation();
     addToCartInFirebase(item);
   };
 
-  const saveItemInContext = () => {
+  const saveItemInContext = (e) => {
+    e.stopPropagation();
     if (user?.email) {
       saveItem(item, isFav);
       setIsFav(!isFav);
     } else {
-      setModal('login');
+      setModal("login");
     }
   };
 
   const truncateString = (str, num) => {
     if (str.length > num) {
-      return str.slice(0, num) + '...';
+      return str.slice(0, num) + "...";
     } else {
       return str;
     }
@@ -81,25 +82,28 @@ const Details = ({ onClick }) => {
 
           <div className="mt-3">
             <div onClick={saveItemInContext}>
-              {isFav || favoritesItems.some((i)=>{return i.id === item.id}) ? (
+              {isFav ||
+              favoritesItems.some((i) => {
+                return i.id === item.id;
+              }) ? (
                 <BsHeartFill
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                   className="fs-3 mt-1 icon-color"
                 />
               ) : (
                 <BsHeart
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                   className="fs-3 mt-1 icon-color"
                 />
               )}
               <span className="ps-2 fs-20 link">Add To Favorites</span>
-              
-          <button
-            className="btn btn-outline-success addBtn px-3 m-3  font-weight-bold"
-            onClick={addToCart}
-          >
-            Add To Cart <BsCart className="ms-2 fs-4" />
-          </button>
+
+              <button
+                className="btn btn-outline-success addBtn px-3 m-3  font-weight-bold"
+                onClick={addToCart}
+              >
+                Add To Cart <BsCart className="ms-2 fs-4" />
+              </button>
             </div>
           </div>
           {item.ProductData ? (
@@ -118,14 +122,11 @@ const Details = ({ onClick }) => {
           ) : item.body ? (
             <>
               <p className="h5 mt-4 fw-bold">Description</p>
-              <p style={{ height: '100px' }}>
+              <p style={{ height: "100px" }}>
                 {truncateString(item.body, 300)}
               </p>
             </>
-
-          ) 
-          :null}
-
+          ) : null}
         </div>
       </div>
     </Container>

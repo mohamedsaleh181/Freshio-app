@@ -27,26 +27,36 @@ export default function SubCategoryContext(props) {
       let { data } = await axios.get(
         `https://healthy-food-ed8b5-default-rtdb.firebaseio.com/${path}.json`
       );
-
+      // array of all keys in our api
       allKeys = Object.keys(data);
-      allCategory = Object.values(data);
+      // all arrays in our data object
+      allCategory = Object.values(data); 
       allCategory.forEach((item) => {
+        // to push all items in each array in allCategory array
         allProduct.push(...item);
       });
+
+
+      // to sort array in random order
       allProduct.sort(() => Math.random() - 0.5);
+      //all items or all products based on path or category
       setSubCategory(allProduct);
       setAllItems(allProduct);
+      // array of all keys in our api
       setCategoryKey([...allKeys]);
+      // array of min price and max price values
       price = maxMinPriceFilter(allProduct);
       setMaxMinPrice(price);
+      // array of min calories and max price values
       calories = maxMinCaloryFilter(allProduct);
       setMaxMinCalory(calories);
+
       brand = brandName(allProduct);
       setBrandArray(brand);
     }
   }
 
-  //Filter max , min Calories from Array
+  //set Filter max , min Calories from Array
   const maxMinCaloryFilter = (arr) => {
     let maxCalory = 0,
       minCalory = 15000;
@@ -61,7 +71,7 @@ export default function SubCategoryContext(props) {
     return [minCalory, maxCalory];
   };
 
-  //Filter max , min price from Array
+  //set Filter max , min price from Array
   const maxMinPriceFilter = (arr) => {
     let maxPrice = 0,
       minPrice = 15000;
@@ -75,46 +85,46 @@ export default function SubCategoryContext(props) {
     }
     return [minPrice, maxPrice];
   };
-  //Filter Array From High to low Price or viceversa
-  const highToLowBubbleSort = (arr) => {
-    let swapped;
+  // //Filter Array From High to low Price or viceversa
+  // const highToLowBubbleSort = (arr) => {
+  //   let swapped;
 
-    do {
-      swapped = true;
+  //   do {
+  //     swapped = true;
 
-      for (let i = 0; i < arr.length - 1; i++) {
-        if (arr[i].price < arr[i + 1].price) {
-          let temp = arr[i];
-          arr[i] = arr[i + 1];
-          arr[i + 1] = temp;
-          swapped = false;
-        }
-      }
-    } while (!swapped);
-    return arr;
-  };
-  const lowToHighBubbleSort = (arr) => {
-    let swapped;
-    do {
-      swapped = true;
-      for (let i = 0; i < arr.length - 1; i++) {
-        if (arr[i].price > arr[i + 1].price) {
-          let temp = arr[i + 1];
-          arr[i + 1] = arr[i];
-          arr[i] = temp;
-          swapped = false;
-        }
-      }
-    } while (!swapped);
-  };
+  //     for (let i = 0; i < arr.length - 1; i++) {
+  //       if (arr[i].price < arr[i + 1].price) {
+  //         let temp = arr[i];
+  //         arr[i] = arr[i + 1];
+  //         arr[i + 1] = temp;
+  //         swapped = false;
+  //       }
+  //     }
+  //   } while (!swapped);
+  //   return arr;
+  // };
+  // const lowToHighBubbleSort = (arr) => {
+  //   let swapped;
+  //   do {
+  //     swapped = true;
+  //     for (let i = 0; i < arr.length - 1; i++) {
+  //       if (arr[i].price > arr[i + 1].price) {
+  //         let temp = arr[i + 1];
+  //         arr[i + 1] = arr[i];
+  //         arr[i] = temp;
+  //         swapped = false;
+  //       }
+  //     }
+  //   } while (!swapped);
+  // };
 
-  const highToLowFilter = (e) => {
-    if (e.target.value === 'highToLow') {
-      setSubCategory(highToLowBubbleSort(subCategory));
-    } else {
-      setSubCategory(lowToHighBubbleSort(subCategory));
-    }
-  };
+  // const highToLowFilter = (e) => {
+  //   if (e.target.value === 'highToLow') {
+  //     setSubCategory(highToLowBubbleSort(subCategory));
+  //   } else {
+  //     setSubCategory(lowToHighBubbleSort(subCategory));
+  //   }
+  // };
 
   //Filter on Sale Product
   const filterSale = (e) => {
@@ -178,7 +188,7 @@ export default function SubCategoryContext(props) {
         filterSale,
         filterSubItem,
         filterBrand,
-        highToLowFilter,
+        // highToLowFilter,
         setSubCategory,
         maxMinCalory,
       }}

@@ -32,7 +32,7 @@ export function CartContextProvider(props) {
         console.log(error);
       }
     } else {
-      alert('please log in first');
+      alert('please login first');
     }
   };
 
